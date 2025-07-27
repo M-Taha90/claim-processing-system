@@ -1,5 +1,3 @@
-// Claim Worker Service
-// Developed by: Taha Imran
 
 const amqp = require("amqplib");
 const fs = require("fs");
@@ -27,7 +25,7 @@ async function saveToMinIO(claimId, data) {
     console.log(" Saved to MinIO:", `${claimId}.json`);
 
     fs.unlinkSync(path);
-    console.log("🧹 Temp file cleaned up");
+    console.log(" Temp file cleaned up");
   } catch (err) {
     console.error(" Error saving to MinIO:", err.message);
   }
